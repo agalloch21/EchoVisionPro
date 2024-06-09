@@ -14,10 +14,6 @@ public class MeshVFX : MonoBehaviour
     [SerializeField]
     private VisualEffect vfx;
 
-    [SerializeField]
-    private VisualEffect testVfx;
-
-
     public int bufferInitialCapacity = 64000;
     public bool dynamicallyResizeBuffer = false;
 
@@ -42,7 +38,7 @@ public class MeshVFX : MonoBehaviour
 
     void LateUpdate()
     {
-        ShowDebugInfo();
+        //ShowDebugInfo();
 
         IList<MeshFilter> mesh_list = GameManager.Instance.MeshManager.meshes;
 
@@ -137,29 +133,29 @@ public class MeshVFX : MonoBehaviour
 
 
 
-            EnsureBufferCapacity(ref bufferVertex, bufferInitialCapacity, BUFFER_STRIDE, testVfx, Shader.PropertyToID("PointBuffer"));
-            const string VFXPositionPostfix = "_position";
-            const string VFXRotationPostfix = "_angles";
-            const string VFXScalePostfix = "_scale";
+
+            //const string VFXPositionPostfix = "_position";
+            //const string VFXRotationPostfix = "_angles";
+            //const string VFXScalePostfix = "_scale";
             if(mesh_list.Count > 0)
             {
-                testVfx.SetVector3("MeshTransform_position", mesh_list[0].transform.position);
-                testVfx.SetVector3("MeshTransform_angles", mesh_list[0].transform.rotation.eulerAngles);
-                testVfx.SetVector3("MeshTransform_scale", mesh_list[0].transform.localScale);
+                vfx.SetVector3("MeshTransform_position", mesh_list[0].transform.position);
+                vfx.SetVector3("MeshTransform_angles", mesh_list[0].transform.rotation.eulerAngles);
+                vfx.SetVector3("MeshTransform_scale", mesh_list[0].transform.localScale);
             }
             else
             {
-                testVfx.SetVector3("MeshTransform_position", Vector3.zero);
-                testVfx.SetVector3("MeshTransform_angles", Vector3.zero);
-                testVfx.SetVector3("MeshTransform_scale", Vector3.one);
+                vfx.SetVector3("MeshTransform_position", Vector3.zero);
+                vfx.SetVector3("MeshTransform_angles", Vector3.zero);
+                vfx.SetVector3("MeshTransform_scale", Vector3.one);
             }
-            
+
             // Set Buffer data, but before that ensure there is enough capacity
-            //EnsureBufferCapacity(ref bufferVertex, listVertex.Count, BUFFER_STRIDE, vfx, VertexBufferPropertyID);
+            EnsureBufferCapacity(ref bufferVertex, listVertex.Count, BUFFER_STRIDE, vfx, VertexBufferPropertyID);
             bufferVertex.SetData(listVertex);
 
-            //EnsureBufferCapacity(ref bufferNormal, listNormal.Count, BUFFER_STRIDE, vfx, NormalBufferPropertyID);
-            //bufferNormal.SetData(listNormal);
+            EnsureBufferCapacity(ref bufferNormal, listNormal.Count, BUFFER_STRIDE, vfx, NormalBufferPropertyID);
+            bufferNormal.SetData(listNormal);
 
 
             // Push Changes to VFX
@@ -175,16 +171,12 @@ public class MeshVFX : MonoBehaviour
     // https://forum.unity.com/threads/vfx-graph-siggraph-2021-video.1198156/
     void Awake()
     {
-
         // Create initial graphics buffer
         listVertex = new List<Vector3>(bufferInitialCapacity);
-        //EnsureBufferCapacity(ref bufferVertex, bufferInitialCapacity, BUFFER_STRIDE, vfx, VertexBufferPropertyID);
+        EnsureBufferCapacity(ref bufferVertex, bufferInitialCapacity, BUFFER_STRIDE, vfx, VertexBufferPropertyID);
 
         listNormal = new List<Vector3>(bufferInitialCapacity);
         EnsureBufferCapacity(ref bufferNormal, bufferInitialCapacity, BUFFER_STRIDE, vfx, NormalBufferPropertyID);
-
-        EnsureBufferCapacity(ref bufferVertex, bufferInitialCapacity, BUFFER_STRIDE, testVfx, Shader.PropertyToID("PointBuffer"));
-        testVfx.SetGraphicsBuffer("PointBuffer", bufferVertex);
     }
 
     void ShowDebugInfo()
@@ -214,18 +206,13 @@ public class MeshVFX : MonoBehaviour
             max_pos = Vector3.Max(max_pos, mesh.sharedMesh.bounds.max);
 
             distance = Vector3.Distance(head_pos, mesh.sharedMesh.bounds.center);
-
-            //GameManager.Instance.SetInfo("Mesh" + i.ToString(), string.Format("VerCount:{0}, Dis:{1}, Min:{2}, Max:{3}", mesh.sharedMesh.vertexCount, distance.ToString("0.000"), min_pos, max_pos));
-            //GameManager.Instance.SetLabel(i.ToString(), mesh.sharedMesh.bounds.center, i.ToString() + "|" + distance.ToString("0.00"));
+           
             GameManager.Instance.SetInfo("Mesh" + i.ToString(), $"Count:{mesh.sharedMesh.vertexCount}, Min:{min_pos}, Max:{max_pos}, pos:{mesh.transform.position.ToString()}, angle:{mesh.transform.rotation.eulerAngles.ToString()}, scale:{mesh.transform.localScale.ToString()}");
+            //GameManager.Instance.SetLabel(i.ToString(), mesh.sharedMesh.bounds.center, i.ToString() + "|" + distance.ToString("0.00"));
         }
 
-        //GameManager.Instance.SetInfo("HeadPos", head_pos.ToString());
         GameManager.Instance.SetInfo("HeadTransform", $"pos:{GameManager.Instance.HeadTransform.position}, angle:{GameManager.Instance.HeadTransform.rotation.eulerAngles}, scale:{GameManager.Instance.HeadTransform.localScale}");
         //GameManager.Instance.SetInfo("VFX", $"pos:{testVfx.transform.position}, angle:{testVfx.transform.rotation.eulerAngles}, scale:{testVfx.transform.localScale}");
-        Transform arsession = GameObject.FindObjectOfType<ARSession>().transform;
-        GameManager.Instance.SetInfo("ARSession",$"pos:{arsession.position}, angle:{arsession.rotation.eulerAngles}, scale:{arsession.localScale}");
-
 
         GameManager.Instance.SetInfo("VertexCount", vertex_count.ToString());
         GameManager.Instance.SetInfo("TriangleCount", triangle_count.ToString());
