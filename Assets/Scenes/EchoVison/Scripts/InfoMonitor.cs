@@ -5,7 +5,6 @@ using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using TMPro;
-using HoloKit;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.VFX;
 

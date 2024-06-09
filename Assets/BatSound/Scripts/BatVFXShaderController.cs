@@ -1,10 +1,9 @@
 using UnityEngine;
-using HoloKit;
 
 [ExecuteInEditMode]
 public class BatVFXShaderController : MonoBehaviour
 {
-
+    public Camera mainCamera;
     public Material material;
 
     // Initalize Array
@@ -114,7 +113,7 @@ public class BatVFXShaderController : MonoBehaviour
 
     public void WaveEmit()
     {
-        var position = FindObjectOfType<HoloKitCameraManager>().transform.position;
+        var position = mainCamera.transform.position;
         // add current position as origin position
         for (int i = 0; i < 6; i++)
         {

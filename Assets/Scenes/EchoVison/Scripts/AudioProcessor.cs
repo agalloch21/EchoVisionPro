@@ -1,4 +1,3 @@
-using HoloKit.iOS;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -28,7 +27,7 @@ public class AudioProcessor : MonoBehaviour
     float audioPitch;
     public float AudioPitch { get { return audioPitch; } }
 
-    [Header("Holokit Recorder")]
+    //[Header("Holokit Recorder")]
     //public HoloKitVideoRecorder videoRecorder;
     public UnityEngine.UI.Text recordingText;
 
@@ -77,8 +76,8 @@ public class AudioProcessor : MonoBehaviour
 
             audioVolume = Remap(DbValue, -10, 10, 0, 1, true);
             audioPitch = Remap(PitchValue, 0, 600, 0, 1, true);
-            //GameManager.Instance.SetInfo("db", DbValue.ToString("0.000"));
-            //GameManager.Instance.SetInfo("pitch", PitchValue.ToString("0.000"));
+            GameManager.Instance.SetInfo("db", DbValue.ToString("0.000"));
+            GameManager.Instance.SetInfo("pitch", PitchValue.ToString("0.000"));
         }
         //GameManager.Instance.SetInfo("FinalVolume", audioVolume.ToString("0.000"));
     }

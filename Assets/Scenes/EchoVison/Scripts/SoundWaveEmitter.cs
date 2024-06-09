@@ -6,7 +6,6 @@ using UnityEngine.VFX;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using HoloKit;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation.Samples;
 
