@@ -872,25 +872,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376078426}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &390276103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8469939711435516433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 0
-  m_CheckFor2DOcclusion: 0
-  m_CheckFor3DOcclusion: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RaycastTriggerInteraction: 1
 --- !u!1 &445421698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,7 +1445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &567903956
 Transform:
   m_ObjectHideFlags: 0
@@ -3059,7 +3040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1324415071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3075,7 +3056,6 @@ MonoBehaviour:
   canvasTransform: {fileID: 8902585489214100579}
   mainCamera: {fileID: 1732320013}
   audio: {fileID: 7124840828664245486}
-  infoText: {fileID: 0}
 --- !u!4 &1324415072
 Transform:
   m_ObjectHideFlags: 0
@@ -5300,22 +5280,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7124840828664245485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4369970916156357266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8469939711435516433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b7a284829c3247c096571c45b26bff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ParticleSystem: {fileID: 0}
-  m_AnchorManager: {fileID: 1989642383}
-  m_HandSubsystemToggleButton: {fileID: 0}
-  m_HandSubsystemToggleText: {fileID: 0}
 --- !u!82 &4610182571025156196
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5601,8 +5565,6 @@ GameObject:
   - component: {fileID: 5670910707379629980}
   - component: {fileID: 4715065516184144478}
   - component: {fileID: 1504137345397647933}
-  - component: {fileID: 4369970916156357266}
-  - component: {fileID: 390276103}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -5668,7 +5630,7 @@ SceneRoots:
   - {fileID: 1001273149}
   - {fileID: 922402872}
   - {fileID: 703058583}
-  - {fileID: 1324415072}
   - {fileID: 895951560}
   - {fileID: 2104435904}
+  - {fileID: 1324415072}
   - {fileID: 1551401546}

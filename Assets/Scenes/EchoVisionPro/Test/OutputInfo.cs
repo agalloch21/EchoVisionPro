@@ -9,7 +9,7 @@ public class OutputInfo : MonoBehaviour
     public Transform canvasTransform;
     public Camera mainCamera;
     public AudioProcessor audio;
-    public TextMeshProUGUI infoText;
+    //public TextMeshProUGUI infoText;
     int clickCount = 0;
    
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class OutputInfo : MonoBehaviour
     {
         
 
-        infoText.text = mainCamera.transform.position.ToString() + "\n" + mainCamera.transform.rotation.eulerAngles.ToString() + "\n" + audio.AudioVolume.ToString() + "\n" + "ClockCount:" + clickCount.ToString();
+        //infoText.text = mainCamera.transform.position.ToString() + "\n" + mainCamera.transform.rotation.eulerAngles.ToString() + "\n" + audio.AudioVolume.ToString() + "\n" + "ClockCount:" + clickCount.ToString();
 
         //Texture2D human_tex = GameManager.Instance.OcclusionManager.environmentDepthTexture;
         //if (human_tex == null)

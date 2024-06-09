@@ -140,7 +140,10 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 3331248126051650580, guid: 07676395e7d9744e9834d0265716b122, type: 2}
+  - {fileID: 11400000, guid: 8286da15b52f84fbabdef738082a7f21, type: 2}
+  - {fileID: 11400000, guid: 5a541de3ef72640308795c435d94a548, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -163,7 +166,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.UnityTechnologies.com.unity.template.urpblank
     Standalone: com.Unity-Technologies.com.unity.template.urp-blank
-    VisionOS: xiaobo.vicecity.VisionOS-FirstTest
+    VisionOS: org.realitydeslab.echovisionpro
     iPhone: com.Unity-Technologies.com.unity.template.urp-blank
   buildNumber:
     Standalone: 0
@@ -285,7 +288,14 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 85e096143e8844798a24821219d25a89, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: iPhone
     m_Icons:
@@ -515,7 +525,10 @@ PlayerSettings:
       m_SubKind: 
   - m_BuildTarget: VisionOS
     m_Icons:
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 85e096143e8844798a24821219d25a89, type: 3}
+      - {fileID: 2800000, guid: 85e096143e8844798a24821219d25a89, type: 3}
+      - {fileID: 2800000, guid: 85e096143e8844798a24821219d25a89, type: 3}
       m_Width: 1024
       m_Height: 1024
       m_Kind: 0
