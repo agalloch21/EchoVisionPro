@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: VisionOSSettings
   m_EditorClassIdentifier: 
   m_AppMode: 0
-  m_HandsTrackingUsageDescription: 
-  m_WorldSensingUsageDescription: use for scanning environment mesh
-  m_RuntimeSettings: {fileID: 11400000, guid: 1fcb576eb9b6d4e2dbe217bb1ea00a3c, type: 2}
+  m_HandsTrackingUsageDescription: Hand tracking required for interaction
+  m_WorldSensingUsageDescription: World sensing required for plane detection
+  m_RuntimeSettings: {fileID: 11400000, guid: 5a541de3ef72640308795c435d94a548, type: 2}
   m_UpperLimbVisibility: 0
   m_FoveatedRendering: 1
   m_IL2CPPLargeExeWorkaround: 0
