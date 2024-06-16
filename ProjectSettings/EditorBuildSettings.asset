@@ -6,21 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/EchoVisionPro/EchoVisionPro.unity
+    path: Assets/Scenes/EchoVisionPro.unity
     guid: 984a8b50bef6141398705a39ecc165b4
-  - enabled: 0
-    path: Assets/Scenes/TestVR_VFX/TestVR_VFX.unity
-    guid: 2e94d50fe77204f8aa572eae08ea1f3d
-  - enabled: 0
-    path: Assets/Scenes/TestMR_VFX_Meshing/TestMR_VFX_Meshing.unity
-    guid: 085aab49b64bc4c65939f87ce810968c
-  - enabled: 0
-    path: Assets/Samples/Apple visionOS XR Plugin/1.2.3/VR Sample - URP/Scenes/Main.unity
-    guid: 59c040aa457144324b963233e912b06e
-  - enabled: 0
-    path: Assets/Samples/Apple visionOS XR Plugin/1.2.3/VR Sample - URP/Scenes/InputSystem
-      UI.unity
-    guid: 8ef2a91730517491fb4ef78c326c26b5
   m_configObjects:
     UnityEditor.XR.VisionOS.VisionOSSettings: {fileID: 11400000, guid: 5286c8400abe24d9db885622f0233a0a,
       type: 2}
