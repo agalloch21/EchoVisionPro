@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: echovisionpro
+  companyName: Holo Interactive
+  productName: EchoVision
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -140,7 +140,10 @@ PlayerSettings:
   visionOSBundleVersion: 0.2.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 3331248126051650580, guid: 07676395e7d9744e9834d0265716b122, type: 2}
+  - {fileID: 11400000, guid: 8286da15b52f84fbabdef738082a7f21, type: 2}
+  - {fileID: 11400000, guid: 5a541de3ef72640308795c435d94a548, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -163,7 +166,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.UnityTechnologies.com.unity.template.urpblank
     Standalone: com.Unity-Technologies.com.unity.template.urp-blank
-    VisionOS: org.realitydeslab.echovisionpro
+    VisionOS: org.realitydeslab.echovision
     iPhone: com.Unity-Technologies.com.unity.template.urp-blank
   buildNumber:
     Standalone: 0
